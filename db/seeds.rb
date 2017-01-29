@@ -7,6 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # binding.pry
-(0..8).to_a.each do |i|
-  Player.create(name: "player_#{i}", role: "villager", position: i)
+(1..4).to_a.each do |i|
+  Player.create(
+    firstname: Faker::Name.first_name,
+    lastname: Faker::Name.last_name,
+    role: "villager",
+    position: i
+  )
 end

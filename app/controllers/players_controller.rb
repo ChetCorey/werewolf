@@ -7,6 +7,10 @@ class PlayersController < ApplicationController
     @players = Player.all
   end
 
+  def circle
+    @players = Player.all
+  end
+
   # GET /players/1
   # GET /players/1.json
   def show
