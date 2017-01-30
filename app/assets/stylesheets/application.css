@@ -1,6 +1,70 @@
 body {
   background-image: url("https://s-media-cache-ak0.pinimg.com/originals/c5/7a/73/c57a736f13f1edadac1d90b9e8de2230.jpg");
   background-size: 200vh;
-  /*height: 100vh;*/
-  /*width: 100v;*/
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  font-family: 'MedievalSharp', cursive;
+  color: #111;
+}
+
+.filter_color {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  margin: 0;
+}
+
+.title h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 1000%;
+  font-family: 'MedievalSharp', cursive;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.btn {
+  box-shadow: 0 12px #444;
+}
+.btn:hover {
+  box-shadow: 0 3px #444;
+  transform: translateY(9px);
+}
+#game_window {
+  position: absolute;
+  top: calc(50vh - 45vw);
+  left: 5vw;
+  width: 90vw;
+  height: 90vw;
+  vertical-align: middle;
+  /*transform: rotate(90deg);*/
+}
+#center_circle {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  background-color: #337ab7;
+  /*line-height: 245.25px;*/
+  /*transform: rotate(90deg);*/
+}
+.circle {
+  /*transform: rotate(270deg);*/
+  border-radius: 50%;
+  border: solid 5px black;
+  display: table;
+  margin: 0;
+}
+.circle p {
+  font-size: 8vw;
+  vertical-align: middle;
+  text-align: center;
+  display: table-cell;
+  font-family: 'MedievalSharp', cursive;
+}
+.player {
+  position: absolute;
 }

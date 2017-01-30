@@ -3,11 +3,23 @@ class PlayersController < ApplicationController
 
   # GET /players
   # GET /players.json
+  def new_game
+    Player.destroy_all
+  end
+
+  def start_game
+
+  end
+
   def index
     @players = Player.all
   end
 
-  def circle
+  def kill_player
+    @players = Player.all
+  end
+
+  def select_player
     @players = Player.all
   end
 
@@ -23,6 +35,7 @@ class PlayersController < ApplicationController
 
   # GET /players/1/edit
   def edit
+    @roles = @player.roles
   end
 
   # POST /players
@@ -73,6 +86,6 @@ class PlayersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
-      params.require(:player).permit(:name, :role, :position)
+      params.require(:player).permit(:firstname, :lastname, :role, :position)
     end
 end
