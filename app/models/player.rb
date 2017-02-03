@@ -21,26 +21,11 @@ class Player < ApplicationRecord
     ]
   end
 
-  def roles
-    ['villager', 'werewolf']
-  end
-
-  def werewolf?
-    roles[role] == 'werewolf'
-  end
-
-  def werewolf_calculation
-
-  end
-
-  # def role
-  #   binding.pry
-  #   read_attribute(:role).to_i -=1
-  #   roles[]
-  #
+  # def roles
+  #   ['villager', 'werewolf']
   # end
 
-  def color
-    colors[position]
+  def werewolf?
+    role == 'werewolf'
   end
 end

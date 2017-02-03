@@ -1,13 +1,11 @@
 class PlayersController < ApplicationController
   before_action :set_game
-  before_action :set_player, only: [:show, :edit, :update, :destroy]
+  before_action :set_player, only: [:show, :edit, :update, :destroy, :select_position]
 
   # GET /players
   # GET /players.json
-  def start_game
-    difficulity_level = params[:difficulity_level]
-    werewolf_num = (@game.players.count/difficulity_level).ceil
-    binding.pry
+  def select_position
+    @players = @game.players
   end
 
   def index
