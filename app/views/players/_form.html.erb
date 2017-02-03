@@ -10,7 +10,7 @@
   </div>
 <% end %>
 
-<div class="container ">
+<div class="container" >
   <%= form_for(player) do |f| %>
   <form class="form-horizontal">
     <div class="field">
@@ -24,13 +24,8 @@
     </div>
 
     <div class="field">
-      <%= f.label :role %>
-      <%= f.select :role, @roles %>
-    </div>
-
-    <div class="field">
       <%= f.label :position %>
-      <%= f.number_field :position, disabled: true %>
+      <%= f.number_field :position %>
     </div>
 
     <div class="actions">

@@ -13,11 +13,17 @@ gem 'faker'
 
 # style
 gem 'bootstrap-sass'
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 gem 'coffee-rails', '~> 4.2'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 gem 'jquery-rails'
+
+# OmniAuth
+gem 'omniauth-facebook'
+gem 'omniauth-bitbucket'
+gem "omniauth-google-oauth2"
+gem 'devise'
 
 # DB
 gem 'sqlite3'

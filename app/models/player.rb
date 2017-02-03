@@ -21,12 +21,22 @@ class Player < ApplicationRecord
   end
 
   def roles
-    [['villager',1], ['werefolf',2]]
+    ['villager', 'werefolf']
+  end
+
+  def werefolf_calculation
+
+  end
+
+  def role
+    binding.pry
+    read_attribute(:role).to_i -=1
+    roles[]
+
   end
 
   def build_player
-    self.position = Player.count if position.nil?
-    self.role = "villager" if role.nil?
+    self.role = "villager" if role.empty?
   end
 
 

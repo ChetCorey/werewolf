@@ -13,12 +13,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <div class="filter_color">
-      <div class="title">
-        <h1>Werefolf</h1>
+  <div class=" scroll"></div>
+    <div class="container">
+      <div class="doc">
+        <div class="row title">
+          <h1>Werefolf</h1>
+        </div>
+        <div class="row">
+          <div class="col col-md-4"></div>
+          <div class="col col-md-4">
+            <%= yield %>
+          </div>
+        </div>
       </div>
-
-      <%= yield %>
     </div>
   </body>
 </html>

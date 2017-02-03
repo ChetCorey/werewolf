@@ -8,7 +8,13 @@ class PlayersController < ApplicationController
   end
 
   def start_game
+    difficulity_level = params[:difficulity_level]
+    (Player.count/difficulity_level).ceil
+    village_nums.each do |village_num|
+    	group_size << { village_num: village_num, werefolf_num: (village_num/difficulity_level).ceil }
+    end
 
+    pp group_size
   end
 
   def index
@@ -31,6 +37,7 @@ class PlayersController < ApplicationController
   # GET /players/new
   def new
     @player = Player.new
+    @roles = @player.roles
   end
 
   # GET /players/1/edit
@@ -57,6 +64,7 @@ class PlayersController < ApplicationController
   # PATCH/PUT /players/1
   # PATCH/PUT /players/1.json
   def update
+binding.pry
     respond_to do |format|
       if @player.update(player_params)
         format.html { redirect_to @player, notice: 'Player was successfully updated.' }
@@ -86,6 +94,6 @@ class PlayersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
-      params.require(:player).permit(:firstname, :lastname, :role, :position)
+      params.require(:player).permit(:firstname, :lastname, :position)
     end
 end
