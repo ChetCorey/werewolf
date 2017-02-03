@@ -1,0 +1,19 @@
+<div id="game_window">
+  <%= circle_size = 40 - (2*@players.count) %>
+  <div id="center_circle" class="circle" style="left: calc(50% - <%= circle_size/2 %>%); width: <%= circle_size %>%; height: <%= circle_size %>%;">
+    <p>Select Player</p>
+  </div>
+
+  <% @players.each_with_index do |player, i| %>
+  <% player_location = ( (360/@players.count) * i) * ( Math::PI / 180) %>
+  <% y = Math.sin(player_location) * 35 %>
+  <% x = Math.cos(player_location) * 35 %>
+
+  <div
+    class="player circle btn"
+    id="player_id_<%= player.id %>"
+    style="top: calc(<%= y %>% + 50% - <%= circle_size/2 %>%); left: calc(<%= x %>% + 50% - <%= circle_size/2 %>%); background-color: <%= player.color %>; width: <%= circle_size %>%; height: <%= circle_size %>%;">
+    <p><%= player.initials %></p>
+  </div>
+  <% end %>
+</div>

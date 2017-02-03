@@ -1,32 +1,31 @@
-<%= form_for(player) do |f| %>
-  <% if player.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(player.errors.count, "error") %> prohibited this player from being saved:</h2>
+<% if player.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(player.errors.count, "error") %> prohibited this player from being saved:</h2>
 
-      <ul>
-      <% player.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :role %>
-    <%= f.text_field :role %>
-  </div>
-
-  <div class="field">
-    <%= f.label :position %>
-    <%= f.number_field :position %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+    <ul>
+    <% player.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
   </div>
 <% end %>
+
+<div class="container" >
+  <% #binding.pry %>
+  <%= form_for(player, url: game_players_path, html: { method: :post }) do |f| %>
+  <form class="form-horizontal">
+    <div class="field">
+      <%= f.label "First Name" %>
+      <%= f.text_field :firstname %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Last Name" %>
+      <%= f.text_field :lastname %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
