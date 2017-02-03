@@ -3,7 +3,7 @@ class Player < ApplicationRecord
   validates :firstname, presence: true
   validates :lastname, presence: true
   validates :game_id, presence: true
-  validates :position, uniqueness: true
+  # validates :position, uniqueness: true
   # validates :role, presence: true
 
   def initials
@@ -22,14 +22,14 @@ class Player < ApplicationRecord
   end
 
   def roles
-    ['villager', 'werefolf']
+    ['villager', 'werewolf']
   end
 
-  def werefolf?
-    roles[role] == 'werefolf'
+  def werewolf?
+    roles[role] == 'werewolf'
   end
 
-  def werefolf_calculation
+  def werewolf_calculation
 
   end
 

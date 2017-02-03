@@ -15,18 +15,13 @@
   <%= form_for(player, url: game_players_path, html: { method: :post }) do |f| %>
   <form class="form-horizontal">
     <div class="field">
-      <%= f.label :firstname %>
+      <%= f.label "First Name" %>
       <%= f.text_field :firstname %>
     </div>
 
     <div class="field">
-      <%= f.label :lastname %>
+      <%= f.label "Last Name" %>
       <%= f.text_field :lastname %>
-    </div>
-
-    <div class="field">
-      <%= f.label :position %>
-      <%= f.number_field :position %>
     </div>
 
     <div class="actions">

@@ -10,7 +10,7 @@
 
 new_game = Game.create(difficulty: 2)
 
-(1..4).to_a.each do |i|
+(1..7).to_a.each do |i|
   Player.create(
     firstname: Faker::Name.first_name,
     lastname: Faker::Name.last_name,

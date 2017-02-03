@@ -3,10 +3,13 @@ class GamesController < ApplicationController
   before_action :has_players?, only: :start
 
   def start
-binding.pry
     moder = (20/(4+@game.difficulty))
-    werefolf_num = (@players.count/moder).ceil
-    @players
+    werewolf_num = (@players.count/moder).ceil
+
+    werewolfs = @players.shuffle[0..werewolf_num-1]
+    villagers = @players - werewolfs
+    werewolfs.each {|w| w.update(role: 'werewolf')}
+    villagers.each {|w| w.update(role: 'villager')}
   end
 
   # GET /games

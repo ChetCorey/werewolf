@@ -6,7 +6,7 @@ class PlayersController < ApplicationController
   # GET /players.json
   def start_game
     difficulity_level = params[:difficulity_level]
-    werefolf_num = (@game.players.count/difficulity_level).ceil
+    werewolf_num = (@game.players.count/difficulity_level).ceil
     binding.pry
   end
 
