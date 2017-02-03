@@ -26,7 +26,7 @@ gem "omniauth-google-oauth2"
 gem 'devise'
 
 # DB
-gem 'sqlite3'
+gem 'pg'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
