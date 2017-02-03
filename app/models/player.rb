@@ -1,8 +1,9 @@
 class Player < ApplicationRecord
-  before_save :build_player
+  belongs_to :game
   validates :firstname, presence: true
   validates :lastname, presence: true
-  # validates :position, presence: true, uniqueness: true
+  validates :game_id, presence: true
+  validates :position, uniqueness: true
   # validates :role, presence: true
 
   def initials
@@ -24,22 +25,20 @@ class Player < ApplicationRecord
     ['villager', 'werefolf']
   end
 
+  def werefolf?
+    roles[role] == 'werefolf'
+  end
+
   def werefolf_calculation
 
   end
 
-  def role
-    binding.pry
-    read_attribute(:role).to_i -=1
-    roles[]
-
-  end
-
-  def build_player
-    self.role = "villager" if role.empty?
-  end
-
-
+  # def role
+  #   binding.pry
+  #   read_attribute(:role).to_i -=1
+  #   roles[]
+  #
+  # end
 
   def color
     colors[position]

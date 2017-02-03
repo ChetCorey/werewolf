@@ -1,9 +1,11 @@
 class CreatePlayers < ActiveRecord::Migration[5.0]
   def change
     create_table :players do |t|
-      t.string :name
-      t.string :role
+      t.string :firstname
+      t.string :lastname
+      t.integer :role
       t.integer :position
+      t.string :color
 
       t.timestamps
     end

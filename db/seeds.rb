@@ -7,9 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # binding.pry
+
+new_game = Game.create(difficulty: 2)
+
 (1..4).to_a.each do |i|
   Player.create(
     firstname: Faker::Name.first_name,
-    lastname: Faker::Name.last_name
+    lastname: Faker::Name.last_name,
+    game: new_game
   )
 end

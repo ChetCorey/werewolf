@@ -11,7 +11,8 @@
 <% end %>
 
 <div class="container" >
-  <%= form_for(player) do |f| %>
+  <% #binding.pry %>
+  <%= form_for(player, url: game_players_path, html: { method: :post }) do |f| %>
   <form class="form-horizontal">
     <div class="field">
       <%= f.label :firstname %>
