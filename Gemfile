@@ -19,11 +19,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 gem 'jquery-rails'
 
-# OmniAuth
-gem 'omniauth-facebook'
-gem 'omniauth-bitbucket'
-gem "omniauth-google-oauth2"
-gem 'devise'
+# # OmniAuth
+# gem 'omniauth-facebook'
+# gem 'omniauth-bitbucket'
+# gem "omniauth-google-oauth2"
+# gem 'devise'
 
 # DB
 gem 'pg'
